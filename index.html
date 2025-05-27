@@ -8,7 +8,7 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 20px;
+            padding: 10px; /* Reduced */
             background-color: #f4f4f4;
             color: #333;
             display: flex;
@@ -18,7 +18,7 @@
 
         .container {
             background-color: #fff;
-            padding: 25px;
+            padding: 15px; /* Reduced */
             border-radius: 8px;
             box-shadow: 0 0 15px rgba(0,0,0,0.1);
             width: 90%;
@@ -28,22 +28,24 @@
         h1 {
             text-align: center;
             color: #e67e22;
-            margin-bottom: 25px;
+            margin-bottom: 15px; /* Reduced */
+            font-size: 1.8em; /* Adjusted */
         }
 
         h2 {
             color: #d35400;
-            margin-top: 20px;
-            margin-bottom: 10px;
+            margin-top: 15px; /* Reduced */
+            margin-bottom: 8px; /* Reduced */
             border-bottom: 2px solid #f39c12;
-            padding-bottom: 5px;
+            padding-bottom: 3px; /* Reduced */
+            font-size: 1.3em; /* Adjusted */
         }
 
         .selector-group {
-            margin-bottom: 20px;
+            margin-bottom: 15px; /* Reduced */
             display: flex;
             flex-wrap: wrap;
-            gap: 10px;
+            gap: 8px; /* Reduced */
         }
 
         .selector-group label {
@@ -51,13 +53,13 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 10px;
+            padding: 8px; /* Reduced */
             border: 2px solid #ddd;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
-            min-width: 90px;
-            height: 90px;
+            min-width: 75px; /* Reduced */
+            height: 75px; /* Reduced */
             text-align: center;
             box-sizing: border-box;
         }
@@ -68,8 +70,8 @@
         }
 
         .selector-group .icon {
-            font-size: 2.8em;
-            margin-bottom: 5px;
+            font-size: 2.2em; /* Reduced */
+            margin-bottom: 3px; /* Reduced */
             line-height: 1;
         }
 
@@ -80,53 +82,57 @@
             box-shadow: 0 0 5px #e67e22;
         }
         .selector-group .icon-label span.item-name {
-            font-size: 0.8em;
+            font-size: 0.7em; /* Reduced */
             line-height: 1.1;
             display: block;
             max-width: 100%;
             word-wrap: break-word;
         }
 
-        .slider-container { margin: 20px 0; text-align: center; }
-        .slider-container label { display: block; margin-bottom: 10px; font-weight: bold; color: #333; }
-        .slider-labels { display: flex; justify-content: space-between; font-size: 0.9em; color: #555; margin: 0 10px 5px 10px; }
-        input[type="range"] { width: calc(100% - 20px); margin: 0 10px; cursor: pointer; -webkit-appearance: none; appearance: none; height: 8px; background: #ddd; border-radius: 5px; outline: none; }
-        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 20px; height: 20px; background: #e67e22; border-radius: 50%; cursor: pointer; }
-        input[type="range"]::-moz-range-thumb { width: 20px; height: 20px; background: #e67e22; border-radius: 50%; cursor: pointer; border: none; }
+        .slider-container { margin: 15px 0; text-align: center; } /* Reduced margin */
+        .slider-container label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; } /* Reduced margin */
+        .slider-labels { display: flex; justify-content: space-between; font-size: 0.8em; color: #555; margin: 0 8px 3px 8px; } /* Reduced font-size and margin */
+        input[type="range"] { width: calc(100% - 16px); margin: 0 8px; cursor: pointer; -webkit-appearance: none; appearance: none; height: 6px; background: #ddd; border-radius: 5px; outline: none; } /* Reduced height and margin */
+        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; background: #e67e22; border-radius: 50%; cursor: pointer; } /* Reduced size */
+        input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; background: #e67e22; border-radius: 50%; cursor: pointer; border: none; } /* Reduced size */
+        .slider-value-display { font-weight: bold; color: #e67e22; margin-top: 5px; font-size: 0.9em;} /* Added font-size */
 
         #generate-button {
-            display: block; width: 100%; padding: 15px; font-size: 1.2em; font-weight: bold;
+            display: block; width: 100%; padding: 12px; font-size: 1em; font-weight: bold; /* Reduced padding and font-size */
             color: #fff; background-color: #e67e22; border: none; border-radius: 8px;
-            cursor: pointer; transition: background-color 0.2s ease-in-out; margin-top: 30px;
+            cursor: pointer; transition: background-color 0.2s ease-in-out; margin-top: 20px; /* Reduced margin */
         }
         #generate-button:hover { background-color: #d35400; }
         #generate-button:disabled { background-color: #ccc; cursor: not-allowed; }
 
         #recipe-result {
-            margin-top: 30px; padding: 20px; background-color: #e9f7ef;
+            margin-top: 20px; /* Reduced */
+            padding: 15px; /* Reduced */
+            background-color: #e9f7ef;
             border: 1px solid #a9dfbf; border-radius: 8px; display: none;
         }
         #recipe-result.error { background-color: #fdedec; border: 1px solid #f5b7b1; }
         #recipe-result.loading { background-color: #eaf2f8; border: 1px solid #aed6f1; text-align: center; }
-        #recipe-result h3 { margin-top: 0; color: #1e8449; }
+        #recipe-result h3 { margin-top: 0; color: #1e8449; font-size: 1.2em; } /* Adjusted font-size */
         #recipe-result.error h3 { color: #c0392b; }
         #recipe-result.loading h3 { color: #2980b9; }
-        #recipe-result p { margin: 10px 0; line-height: 1.6; }
-        #recipe-result ul, #recipe-result ol { margin-left: 20px; padding-left: 20px; }
-        #recipe-result li { margin-bottom: 5px; }
+        #recipe-result h4 { font-size: 1.1em; margin-top: 8px; margin-bottom: 5px; } /* Adjusted */
+        #recipe-result p { margin: 8px 0; line-height: 1.5; font-size: 0.9em; } /* Adjusted */
+        #recipe-result ul, #recipe-result ol { margin-left: 20px; padding-left: 20px; font-size: 0.9em; } /* Added font-size */
+        #recipe-result li { margin-bottom: 4px; } /* Adjusted */
         #recipe-result a { color: #e67e22; text-decoration: none; font-weight: bold; }
         #recipe-result a:hover { text-decoration: underline; }
 
         .api-warning {
-            background-color: #fff3cd; color: #856404; padding: 15px;
-            border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 20px;
-            text-align: center; font-weight: bold;
+            background-color: #fff3cd; color: #856404; padding: 10px; /* Reduced */
+            border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 15px; /* Reduced */
+            text-align: center; font-weight: bold; font-size: 0.9em; /* Added font-size */
         }
     </style>
 </head>
 <body>
-
-        <h1>Dinner Decision Maker (AI Powered) 🍽️</h1>
+    <div class="container">
+        <h1>Dinner Decision Maker 🍽️</h1>
 
         <section><h2>1. Pick your Protein:</h2><div class="selector-group" id="protein-selector"></div></section>
         <section><h2>2. Select Vegetables (multiple):</h2><div class="selector-group" id="vegetable-selector"></div></section>
@@ -141,88 +147,126 @@
                 </label>
             </div>
         </section>
-        <section><h2>4. Ingredient Availability:</h2><div class="slider-container"><div class="slider-labels"><span>I already have these</span><span>I'm going shopping</span></div><input type="range" id="availability-slider" min="0" max="1" value="0" step="1"></div></section>
-        <section><h2>5. Choose a Cuisine:</h2><div class="selector-group" id="cuisine-selector"></div></section>
+        <section><h2>4. Available Seasonings (multiple):</h2><div class="selector-group" id="seasoning-selector"></div></section>
+        <section><h2>5. Available Sauces (multiple):</h2><div class="selector-group" id="sauce-selector"></div></section>
+        <section><h2>6. Choose a Cuisine:</h2><div class="selector-group" id="cuisine-selector"></div></section>
+        <section><h2>7. Dietary Preferences (multiple):</h2><div class="selector-group" id="dietary-selector"></div></section>
+        <section><h2>8. Ingredient Availability:</h2><div class="slider-container"><div class="slider-labels"><span>I already have these</span><span>I'm going shopping</span></div><input type="range" id="availability-slider" min="0" max="1" value="0" step="1"></div></section>
+        <section><h2>9. Max Prep Time:</h2>
+            <div class="slider-container">
+                <input type="range" id="prep-time-slider" min="5" max="120" value="30" step="5">
+                <div class="slider-value-display" id="prep-time-display">30 minutes</div>
+            </div>
+        </section>
 
         <button id="generate-button">Let's Eat! 🎲</button>
 
-        <div id="recipe-result"> <h3 id="recipe-name-display"></h3> <p id="recipe-description"></p> <h4>Ingredients:</h4> <ul id="recipe-ingredients"></ul> <h4>Instructions:</h4> <ol id="recipe-instructions"></ol> <p id="recipe-notes"></p> <p>To find similar recipes: <a id="recipe-search-link" href="#" target="_blank">Search Online</a></p> </div>
+        <div id="recipe-result">
+            <h3 id="recipe-name-display"></h3>
+            <p id="recipe-description"></p>
+            <h4>Ingredients:</h4>
+            <ul id="recipe-ingredients"></ul>
+            <h4>Instructions:</h4>
+            <ol id="recipe-instructions"></ol>
+            <p id="recipe-notes"></p>
+            <p>To find similar recipes: <a id="recipe-search-link" href="#" target="_blank">Search Online</a></p>
+        </div>
     </div>
 
     <script>
         // --- CONFIGURATION ---
-        const GEMINI_API_KEY = "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8"; // YOUR API KEY IS HERE
+        const GEMINI_API_KEY = "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8"; // IMPORTANT: Replace with your actual API key
         const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+
 
         // --- UI DATA (with Emojis) ---
         const proteins = [
-            // Chicken
-            { id: 'chicken_breast', name: 'Chicken Breast', icon: '🐔' },
-            { id: 'chicken_thighs', name: 'Chicken Thighs', icon: '🐔' },
-            { id: 'ground_chicken', name: 'Ground Chicken', icon: '🐔' },
-            // Beef
-            { id: 'ribeye_steak', name: 'Ribeye Steak', icon: '🥩' },
-            { id: 'filet_mignon', name: 'Filet Mignon', icon: '🥩' },
-            { id: 'ground_beef', name: 'Ground Beef', icon: '🥩' },
-            { id: 'beef_stew_meat', name: 'Stew Beef', icon: '🥩' },
-            // Pork
-            { id: 'pork_chop', name: 'Pork Chop', icon: '🐖' },
-            { id: 'pork_tenderloin', name: 'Pork Tenderloin', icon: '🐖' },
-            { id: 'ground_pork', name: 'Ground Pork', icon: '🐖' },
-            // Fish & Seafood
-            { id: 'salmon_fillet', name: 'Salmon Fillet', icon: '🐟' },
-            { id: 'cod_fillet', name: 'Cod Fillet', icon: '🐟' },
-            { id: 'tilapia_fillet', name: 'Tilapia Fillet', icon: '🐟' },
-            { id: 'shrimp', name: 'Shrimp', icon: '🦐' },
-            // Plant-Based
-            { id: 'tofu', name: 'Tofu', icon: '🧈' }, // Butter emoji often used for block shape
-            { id: 'lentils', name: 'Lentils', icon: '🫘' },
-            // Other
-            { id: 'eggs', name: 'Eggs', icon: '🥚' }
+            { id: 'chicken_breast', name: 'Chicken Breast', icon: '🐔' }, { id: 'chicken_thighs', name: 'Chicken Thighs', icon: '🐔' },
+            { id: 'ground_chicken', name: 'Ground Chicken', icon: '🐔' }, { id: 'ribeye_steak', name: 'Ribeye Steak', icon: '🥩' },
+            { id: 'filet_mignon', name: 'Filet Mignon', icon: '🥩' }, { id: 'ground_beef', name: 'Ground Beef', icon: '🥩' },
+            { id: 'beef_stew_meat', name: 'Stew Beef', icon: '🥩' }, { id: 'pork_chop', name: 'Pork Chop', icon: '🐖' },
+            { id: 'pork_tenderloin', name: 'Pork Tenderloin', icon: '🐖' }, { id: 'ground_pork', name: 'Ground Pork', icon: '🐖' },
+            { id: 'bacon', name: 'Bacon', icon: '🥓' }, { id: 'salmon_fillet', name: 'Salmon Fillet', icon: '🐟' },
+            { id: 'cod_fillet', name: 'Cod Fillet', icon: '🐟' }, { id: 'tilapia_fillet', name: 'Tilapia Fillet', icon: '🐟' },
+            { id: 'shrimp', name: 'Shrimp', icon: '🦐' }, { id: 'tofu', name: 'Tofu', icon: '🧈' },
+            { id: 'lentils', name: 'Lentils', icon: '🫘' }, { id: 'eggs', name: 'Eggs', icon: '🥚' }
         ];
 
         const vegetables = [
-            { id: 'broccoli', name: 'Broccoli', icon: '🥦' },
-            { id: 'carrot', name: 'Carrot', icon: '🥕' },
-            { id: 'spinach', name: 'Spinach', icon: '🥬' },
-            { id: 'bellpepper', name: 'Bell Pepper', icon: '🌶️' },
-            { id: 'onion', name: 'Onion', icon: '🧅' },
-            { id: 'potato_veg', name: 'Potato (Veg)', icon: '🥔' },
-            { id: 'tomato', name: 'Tomato', icon: '🍅' },
-            { id: 'mushroom', name: 'Mushroom', icon: '🍄' },
-            { id: 'zucchini', name: 'Zucchini', icon: '🥒' },
-            { id: 'garlic', name: 'Garlic', icon: '🧄' },
-            { id: 'asparagus', name: 'Asparagus', icon: '🌿' }, // Generic herb/plant for asparagus
-            { id: 'cauliflower', name: 'Cauliflower', icon: '💮' }, // White flower emoji for cauliflower
-            { id: 'green_beans', name: 'Green Beans', icon: '🫛' },
-            { id: 'peas', name: 'Peas', icon: '🫛' },
-            { id: 'sweet_potato', name: 'Sweet Potato', icon: '🍠' },
-            { id: 'eggplant', name: 'Eggplant', icon: '🍆' },
-            { id: 'kale', name: 'Kale', icon: '🥬' },
-            { id: 'corn_cob', name: 'Corn', icon: '🌽' },
-            { id: 'celery', name: 'Celery', icon: '🌿' }, // Generic herb/plant for celery
-            { id: 'leeks', name: 'Leeks', icon: '🧅' }  // Using onion as it's visually somewhat similar for leeks
+            { id: 'broccoli', name: 'Broccoli', icon: '🥦' }, { id: 'carrot', name: 'Carrot', icon: '🥕' },
+            { id: 'spinach', name: 'Spinach', icon: '🥬' }, { id: 'bellpepper', name: 'Bell Pepper', icon: '🌶️' },
+            { id: 'onion', name: 'Onion', icon: '🧅' }, { id: 'potato_veg', name: 'Potato (Veg)', icon: '🥔' },
+            { id: 'tomato', name: 'Tomato', icon: '🍅' }, { id: 'mushroom', name: 'Mushroom', icon: '🍄' },
+            { id: 'zucchini', name: 'Zucchini', icon: '🥒' }, { id: 'garlic', name: 'Garlic', icon: '🧄' },
+            { id: 'asparagus', name: 'Asparagus', icon: '🌿' }, { id: 'cauliflower', name: 'Cauliflower', icon: '💮' },
+            { id: 'green_beans', name: 'Green Beans', icon: '🫛' }, { id: 'peas', name: 'Peas', icon: '🫛' },
+            { id: 'sweet_potato_veg', name: 'Sweet Potato', icon: '🍠' }, { id: 'eggplant', name: 'Eggplant', icon: '🍆' }, 
+            { id: 'kale', name: 'Kale', icon: '🥬' }, { id: 'corn_cob', name: 'Corn', icon: '🌽' },
+            { id: 'celery', name: 'Celery', icon: '🌿' }, { id: 'leeks', name: 'Leeks', icon: '🧅' }
         ];
 
         const starches = [
-            { id: 'rice', name: 'Rice', icon: '🍚' },
-            { id: 'pasta', name: 'Pasta', icon: '🍝' },
-            { id: 'bread', name: 'Bread', icon: '🍞' },
-            { id: 'potato_starch', name: 'Potatoes (Starch)', icon: '🥔' }
+            { id: 'rice', name: 'Rice', icon: '🍚' }, { id: 'pasta', name: 'Pasta', icon: '🍝' },
+            { id: 'bread', name: 'Bread', icon: '🍞' }, { id: 'potatoes_starch', name: 'Potatoes', icon: '🥔' },
+            { id: 'quinoa', name: 'Quinoa', icon: '🌾' }, { id: 'cornmeal_grits', name: 'Cornmeal/Grits', icon: '🌽' },
+            { id: 'oats', name: 'Oats', icon: '🥣' }, { id: 'couscous', name: 'Couscous', icon: '🧆' }, 
+            { id: 'barley', name: 'Barley', icon: '🌾' }, { id: 'sweet_potato_starch', name: 'Sweet Potatoes', icon: '🍠' }
+        ];
+
+        const seasonings = [
+            { id: 'salt', name: 'Salt', icon: '🧂' }, { id: 'black_pepper', name: 'Pepper', icon: '⚫' },
+            { id: 'garlic_powder', name: 'Garlic Pwd', icon: '🧄' }, { id: 'onion_powder', name: 'Onion Pwd', icon: '🧅' },
+            { id: 'paprika', name: 'Paprika', icon: '🌶️' }, { id: 'cumin', name: 'Cumin', icon: '🌿' },
+            { id: 'oregano', name: 'Oregano', icon: '🌿' }, { id: 'chili_powder', name: 'Chili Pwd', icon: '🌶️🔥' },
+            { id: 'dried_basil', name: 'Basil', icon: '🌿' }, { id: 'red_pepper_flakes', name: 'Red Pep Flakes', icon: '🌶️' },
+            { id: 'thyme', name: 'Thyme', icon: '🌿' }, { id: 'rosemary', name: 'Rosemary', icon: '🌿' },
+            { id: 'bay_leaves', name: 'Bay Leaves', icon: '🍃' }, { id: 'cinnamon', name: 'Cinnamon', icon: '🍂' },
+            { id: 'nutmeg', name: 'Nutmeg', icon: '🌰' }, { id: 'cloves', name: 'Cloves', icon: '✨' },
+            { id: 'ginger_powder', name: 'Ginger Pwd', icon: '🌿' }, { id: 'turmeric', name: 'Turmeric', icon: '🧡' },
+            { id: 'coriander_powder', name: 'Coriander Pwd', icon: '🌿' }, { id: 'italian_seasoning', name: 'Italian Mix', icon: '🌿🇮🇹' }
+        ];
+
+        const sauces = [
+            { id: 'soy_sauce', name: 'Soy Sauce', icon: '🍾' }, { id: 'ketchup', name: 'Ketchup', icon: '🥫' }, 
+            { id: 'mayonnaise', name: 'Mayo', icon: '🥚' }, { id: 'mustard', name: 'Mustard', icon: '💛' },
+            { id: 'hot_sauce_general', name: 'Hot Sauce', icon: '🌶️🔥' }, { id: 'bbq_sauce', name: 'BBQ Sauce', icon: '🍖' },
+            { id: 'olive_oil', name: 'Olive Oil', icon: '🫒' }, { id: 'worcestershire', name: 'Worcestershire', icon: '🍾' },
+            { id: 'vinegar_general', name: 'Vinegar', icon: '🧪' }, { id: 'honey', name: 'Honey', icon: '🍯' },
+            { id: 'maple_syrup', name: 'Maple Syrup', icon: '🍁' }, { id: 'teriyaki_sauce', name: 'Teriyaki', icon: '🍾' },
+            { id: 'sriracha', name: 'Sriracha', icon: '🌶️🔥' }, { id: 'pesto', name: 'Pesto', icon: '🌿🟢' },
+            { id: 'ranch_dressing', name: 'Ranch', icon: '🥛' }, { id: 'balsamic_vinegar', name: 'Balsamic', icon: '🍾🍇' },
+            { id: 'tahini', name: 'Tahini', icon: '🏺' }, { id: 'coconut_milk', name: 'Coconut Milk', icon: '🥥' },
+            { id: 'fish_sauce', name: 'Fish Sauce', icon: '🐟🍾' }, { id: 'sweet_chili_sauce', name: 'Sweet Chili', icon: '🌶️🍯' }
         ];
 
         const cuisines = [
-            { id: 'italian', name: 'Italian', icon: '🇮🇹' }, { id: 'asian', name: 'Asian', icon: '🍜' },
-            { id: 'mexican', name: 'Mexican', icon: '🌮' }, { id: 'mediterranean', name: 'Mediterranean', icon: '🥗' },
-            { id: 'indian', name: 'Indian', icon: '🥘' }, { id: 'american', name: 'American', icon: '🍔' }
+            { id: 'italian', name: 'Italian', icon: '🇮🇹' }, { id: 'american', name: 'American', icon: '🍔' },
+            { id: 'mexican', name: 'Mexican', icon: '🌮' }, { id: 'indian', name: 'Indian', icon: '🥘' },
+            { id: 'chinese', name: 'Chinese', icon: '🇨🇳' }, { id: 'japanese', name: 'Japanese', icon: '🇯🇵' },
+            { id: 'thai', name: 'Thai', icon: '🇹🇭' }, { id: 'greek', name: 'Greek', icon: '🇬🇷' },
+            { id: 'spanish', name: 'Spanish', icon: '🇪🇸' }, { id: 'french', name: 'French', icon: '🇫🇷' },
+            { id: 'korean', name: 'Korean', icon: '🇰🇷' }, { id: 'vietnamese', name: 'Vietnamese', icon: '🇻🇳' },
+            { id: 'mediterranean', name: 'Mediterranean', icon: '🥗' }, { id: 'middle_eastern', name: 'Mid. Eastern', icon: '🧆' },
+            { id: 'caribbean', name: 'Caribbean', icon: '🇯🇲' }
+        ];
+
+        const dietaryPreferences = [
+            { id: 'vegan', name: 'Vegan', icon: '🌱' }, { id: 'vegetarian', name: 'Vegetarian', icon: '🥕' },
+            { id: 'keto', name: 'Keto', icon: '🥓' }, { id: 'dairy_free', name: 'Dairy-Free', icon: '🥛🚫' },
+            { id: 'gluten_free', name: 'Gluten-Free', icon: '🌾🚫' }
         ];
 
         // --- DOM ELEMENTS ---
         const proteinSelector = document.getElementById('protein-selector');
         const vegetableSelector = document.getElementById('vegetable-selector');
         const starchSelector = document.getElementById('starch-selector');
-        const availabilitySlider = document.getElementById('availability-slider');
+        const seasoningSelector = document.getElementById('seasoning-selector');
+        const sauceSelector = document.getElementById('sauce-selector');
         const cuisineSelector = document.getElementById('cuisine-selector');
+        const dietarySelector = document.getElementById('dietary-selector');
+        const availabilitySlider = document.getElementById('availability-slider');
+        const prepTimeSlider = document.getElementById('prep-time-slider');
+        const prepTimeDisplay = document.getElementById('prep-time-display');
         const generateButton = document.getElementById('generate-button');
 
         const recipeResultDiv = document.getElementById('recipe-result');
@@ -245,7 +289,7 @@
 
             const iconSpan = document.createElement('span');
             iconSpan.className = 'icon';
-            iconSpan.textContent = item.icon || '❔'; // Default to question mark if no icon
+            iconSpan.textContent = item.icon || '❔';
 
             const nameSpan = document.createElement('span');
             nameSpan.className = 'item-name';
@@ -264,10 +308,31 @@
             starches.forEach(s => {
                 if(s.id !== 'none') starchSelector.appendChild(createIconOption(s, 'radio', 'starch'));
             });
+            seasonings.forEach(s => seasoningSelector.appendChild(createIconOption(s, 'checkbox', 'seasoning')));
+            sauces.forEach(s => sauceSelector.appendChild(createIconOption(s, 'checkbox', 'sauce')));
             cuisines.forEach(c => cuisineSelector.appendChild(createIconOption(c, 'radio', 'cuisine')));
+            dietaryPreferences.forEach(d => dietarySelector.appendChild(createIconOption(d, 'checkbox', 'dietary')));
         }
 
-        function getSelectedValues(groupName, type = 'radio') { /* ... (same) ... */
+        prepTimeSlider.addEventListener('input', () => {
+            const valueInMinutes = parseInt(prepTimeSlider.value);
+            const hours = Math.floor(valueInMinutes / 60);
+            const minutes = valueInMinutes % 60;
+            let displayValue = "";
+            if (hours > 0) {
+                displayValue += `${hours} hour${hours > 1 ? 's' : ''} `;
+            }
+            if (minutes > 0 || hours === 0) { 
+                displayValue += `${minutes} minutes`;
+            }
+             if (valueInMinutes === 0 && hours === 0 && minutes === 0) { 
+                displayValue = "5 minutes"; 
+            }
+            prepTimeDisplay.textContent = displayValue.trim();
+        });
+
+
+        function getSelectedValues(groupName, type = 'radio') {
             if (type === 'radio') {
                 const selected = document.querySelector(`input[name="${groupName}"]:checked`);
                 return selected ? selected.value : null;
@@ -278,7 +343,13 @@
             }
             return null;
         }
-        function displayRecipe(data) { /* ... (same) ... */
+
+        function getNameById(id, list) {
+            const item = list.find(i => i.id === id);
+            return item ? item.name : id;
+        }
+
+        function displayRecipe(data) {
             recipeResultDiv.classList.remove('loading', 'error');
             recipeResultDiv.style.display = 'block';
             recipeNameDisplay.textContent = data.recipeName || "AI Chef's Special";
@@ -300,13 +371,13 @@
                 });
             } else { recipeInstructionsList.innerHTML = '<li>Instructions not specified.</li>'; }
             recipeNotes.textContent = data.notes || "";
-            if (data.searchLink) {
+            if (data.searchLink && data.recipeName) {
                 recipeSearchLink.href = `https://www.google.com/search?q=${encodeURIComponent(data.searchLink)}`;
                 recipeSearchLink.textContent = `Search for "${data.recipeName}" or similar`;
                 recipeSearchLink.style.display = 'inline';
             } else { recipeSearchLink.style.display = 'none'; }
         }
-        function displayError(message) { /* ... (same) ... */
+        function displayError(message) {
             recipeResultDiv.classList.remove('loading');
             recipeResultDiv.classList.add('error');
             recipeResultDiv.style.display = 'block';
@@ -317,7 +388,7 @@
             recipeNotes.textContent = '';
             recipeSearchLink.style.display = 'none';
         }
-        function displayLoading() { /* ... (same) ... */
+        function displayLoading() {
             recipeResultDiv.classList.remove('error');
             recipeResultDiv.classList.add('loading');
             recipeResultDiv.style.display = 'block';
@@ -329,16 +400,25 @@
             recipeSearchLink.style.display = 'none';
         }
 
-        generateButton.addEventListener('click', async () => { /* ... (same as previous detailed version, including getting full names for the prompt) ... */
-            const selectedProtein = getSelectedValues('protein');
-            const selectedVeggies = getSelectedValues('vegetable', 'checkbox');
-            let selectedStarch = getSelectedValues('starch');
-            if (selectedStarch === 'none') selectedStarch = null;
+        generateButton.addEventListener('click', async () => {
+            if (GEMINI_API_KEY === "YOUR_GEMINI_API_KEY" || GEMINI_API_KEY === "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8") {
+                displayError("Please configure your Gemini API key in the script to use this feature.");
+                return;
+            }
 
+            const selectedProteinId = getSelectedValues('protein');
+            const selectedVeggieIds = getSelectedValues('vegetable', 'checkbox');
+            let selectedStarchId = getSelectedValues('starch');
+            if (selectedStarchId === 'none') selectedStarchId = null;
+            const selectedSeasoningIds = getSelectedValues('seasoning', 'checkbox');
+            const selectedSauceIds = getSelectedValues('sauce', 'checkbox');
+            const selectedCuisineId = getSelectedValues('cuisine');
+            const selectedDietaryIds = getSelectedValues('dietary', 'checkbox');
             const wantsToShop = availabilitySlider.value === '1';
-            const selectedCuisine = getSelectedValues('cuisine');
+            const maxPrepTime = prepTimeSlider.value;
 
-            if (!selectedProtein || !selectedCuisine) {
+
+            if (!selectedProteinId || !selectedCuisineId) {
                 displayError("Please select a protein and a cuisine.");
                 return;
             }
@@ -346,22 +426,38 @@
             generateButton.disabled = true;
             displayLoading();
 
-            const proteinName = proteins.find(p => p.id === selectedProtein)?.name || selectedProtein;
-            const veggieNames = selectedVeggies.map(vId => vegetables.find(v => v.id === vId)?.name || vId);
-            const starchName = starches.find(s => s.id === selectedStarch)?.name || selectedStarch;
-            const cuisineName = cuisines.find(c => c.id === selectedCuisine)?.name || selectedCuisine;
+            const proteinName = getNameById(selectedProteinId, proteins);
+            const veggieNames = selectedVeggieIds.map(id => getNameById(id, vegetables));
+            const starchName = selectedStarchId ? getNameById(selectedStarchId, starches) : null;
+            const seasoningNames = selectedSeasoningIds.map(id => getNameById(id, seasonings));
+            const sauceNames = selectedSauceIds.map(id => getNameById(id, sauces));
+            const cuisineName = getNameById(selectedCuisineId, cuisines);
+            const dietaryNames = selectedDietaryIds.map(id => getNameById(id, dietaryPreferences));
+
 
             const shoppingPreferenceText = wantsToShop ? "User is going shopping and open to buying new ingredients." : "User wants to use ingredients they likely already have; prioritize common pantry staples for unspecified items.";
 
-            const prompt = `
+            let prompt = `
 You are a helpful and creative chef.
 A user wants a dinner recipe based on these preferences:
 - Protein: ${proteinName}
 - Vegetables: ${veggieNames.length > 0 ? veggieNames.join(', ') : 'Any suitable vegetables'}
 - Starch (optional): ${starchName || 'None specified, use if appropriate for the dish'}
-- Cuisine Style: ${cuisineName}
-- Shopping Willingness: ${shoppingPreferenceText}
+`;
+            if (seasoningNames.length > 0) {
+                prompt += `- User has these seasonings available and would like to use some if suitable: ${seasoningNames.join(', ')}\n`;
+            }
+            if (sauceNames.length > 0) {
+                prompt += `- User has these sauces available and would like to use some if suitable: ${sauceNames.join(', ')}\n`;
+            }
+            prompt += `- Cuisine Style: ${cuisineName}\n`;
+            if (dietaryNames.length > 0) {
+                prompt += `- Dietary Restrictions/Preferences: ${dietaryNames.join(', ')}. The recipe must adhere to these.\n`;
+            }
+            prompt += `- Shopping Willingness: ${shoppingPreferenceText}\n`;
+            prompt += `- Maximum Prep Time: ${maxPrepTime} minutes. Please suggest a recipe that can be prepared within this time.\n`;
 
+            prompt += `
 Please provide a single, complete recipe suggestion.
 The output MUST be a valid JSON object with the following structure, and nothing else before or after the JSON:
 {
@@ -375,15 +471,17 @@ The output MUST be a valid JSON object with the following structure, and nothing
     "Step 2...",
     "Step 3..."
   ],
-  "notes": "Any extra tips, serving suggestions, or why this recipe fits the criteria. If the user is not going shopping, emphasize using common pantry staples for any unspecified ingredients. Limit to 1-2 sentences.",
-  "searchLink": "A concise Google search query to find this specific recipe or very similar ones online, e.g., 'easy ${proteinName} and ${veggieNames.length > 0 ? veggieNames[0] : 'vegetable'} ${cuisineName} recipe'"
+  "notes": "Any extra tips, serving suggestions, prep time considerations, or why this recipe fits the criteria. If user is not going shopping, emphasize using common pantry staples. Limit to 1-2 sentences.",
+  "searchLink": "A concise Google search query to find this specific recipe or very similar ones online, e.g., 'easy ${proteinName} ${veggieNames.length > 0 ? veggieNames[0] : ''} ${starchName || ''} ${cuisineName} recipe ${dietaryNames.length > 0 ? dietaryNames[0] : ''}'"
 }
 
-Focus on a recipe that is relatively straightforward to make.
+Focus on a recipe that is relatively straightforward to make and fits all criteria.
 Ensure the recipe name is catchy and the instructions are clear and concise (3-5 main steps).
 List 5-10 key ingredients.
 If no specific vegetables are selected, suggest 2-3 common vegetables that fit the cuisine and protein.
 The recipe should primarily feature the selected protein, vegetables, and starch (if chosen).
+If vegan or vegetarian is selected, ensure the protein choice aligns or an alternative is implicitly used (e.g. if user selects chicken but also vegan, prioritize vegan).
+Adhere strictly to dietary restrictions. For example, if 'gluten-free' is selected, do not suggest recipes with wheat pasta unless specifying gluten-free pasta. If 'keto' is selected, ensure ingredients are low-carb.
 `;
 
             try {
@@ -422,8 +520,14 @@ The recipe should primarily feature the selected protein, vegetables, and starch
                     }
                 } else if (responseData.promptFeedback && responseData.promptFeedback.blockReason) {
                     console.error("Prompt blocked by API:", responseData.promptFeedback);
-                    displayError(`Your request was blocked by the API. Reason: ${responseData.promptFeedback.blockReason}. You might need to adjust your prompt or safety settings if configured.`);
-                } else {
+                    let blockMessage = `Your request was blocked by the API. Reason: ${responseData.promptFeedback.blockReason}.`;
+                    if (responseData.promptFeedback.safetyRatings) {
+                         blockMessage += ` Categories: ${responseData.promptFeedback.safetyRatings.map(r => r.category).join(', ')}.`;
+                    }
+                    blockMessage += " You might need to adjust your selections or API safety settings."
+                    displayError(blockMessage);
+                }
+                 else {
                     console.error("Unexpected API response structure:", responseData);
                     displayError("Received an unexpected response structure from the AI. Check console for details.");
                 }
@@ -436,6 +540,7 @@ The recipe should primarily feature the selected protein, vegetables, and starch
         });
         // --- INITIALIZATION ---
         populateSelectors();
+        prepTimeSlider.dispatchEvent(new Event('input')); 
     </script>
 </body>
 </html>
