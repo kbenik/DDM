@@ -123,20 +123,14 @@
         #recipe-result a { color: #e67e22; text-decoration: none; font-weight: bold; }
         #recipe-result a:hover { text-decoration: underline; }
 
-        .api-warning {
-            background-color: #fff3cd; color: #856404; padding: 10px; /* Reduced */
-            border: 1px solid #ffeeba; border-radius: 5px; margin-bottom: 15px; /* Reduced */
-            text-align: center; font-weight: bold; font-size: 0.9em; /* Added font-size */
-        }
+        /* Removed .api-warning style as the div is removed */
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Dinner Decision Maker (AI Powered) 🍽️</h1>
 
-        <div class="api-warning" style="display: none;" id="api-key-warning">
-            
-        </div>
+        <!-- Removed API Key Warning Div -->
 
         <section><h2>1. Pick your Protein:</h2><div class="selector-group" id="protein-selector"></div></section>
         <section><h2>2. Select Vegetables (multiple):</h2><div class="selector-group" id="vegetable-selector"></div></section>
@@ -179,9 +173,10 @@
 
     <script>
         // --- CONFIGURATION ---
-        const GEMINI_API_KEY = "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8"; // IMPORTANT: Replace with your actual API key
+        const GEMINI_API_KEY = "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8"; // Your API Key is now directly here
         const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
+        // Removed API Key warning logic from JavaScript
 
         // --- UI DATA (with Emojis) ---
         const proteins = [
@@ -329,7 +324,7 @@
             if (minutes > 0 || hours === 0) { 
                 displayValue += `${minutes} minutes`;
             }
-             if (valueInMinutes === 0 && hours === 0 && minutes === 0) { 
+             if (valueInMinutes === 0 && hours === 0 && minutes === 0) { // Should be caught by min="5" but good fallback
                 displayValue = "5 minutes"; 
             }
             prepTimeDisplay.textContent = displayValue.trim();
@@ -405,10 +400,7 @@
         }
 
         generateButton.addEventListener('click', async () => {
-            if (GEMINI_API_KEY === "YOUR_GEMINI_API_KEY" || GEMINI_API_KEY === "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8") {
-                displayError("Please configure your Gemini API key in the script to use this feature.");
-                return;
-            }
+            // Removed API key check here
 
             const selectedProteinId = getSelectedValues('protein');
             const selectedVeggieIds = getSelectedValues('vegetable', 'checkbox');
@@ -503,8 +495,9 @@ Adhere strictly to dietary restrictions. For example, if 'gluten-free' is select
                     console.error("API Error Response:", errorData);
                     let detailedErrorMessage = `API request failed: ${response.status} ${response.statusText}.`;
                     if (errorData.error && errorData.error.message) { detailedErrorMessage += ` Details: ${errorData.error.message}`; }
-                    if (response.status === 400 && errorData.error?.message?.toLowerCase().includes("api key not valid")) { detailedErrorMessage += " Please check that your API key is correct and enabled for the Gemini API."; }
-                    else if (response.status === 403) { detailedErrorMessage += " Permission denied. Ensure the API key has the necessary permissions for the Gemini API or that the API is enabled in your Google Cloud project."; }
+                    // Simplified error for API key issues, as it's now hardcoded
+                    if (response.status === 400 && errorData.error?.message?.toLowerCase().includes("api key not valid")) { detailedErrorMessage += " The hardcoded API key is not valid. Please check it."; }
+                    else if (response.status === 403) { detailedErrorMessage += " Permission denied for the hardcoded API key. Ensure it has necessary permissions or the API is enabled."; }
                     else if (response.status === 404 && errorData.error?.message?.toLowerCase().includes("model")) { detailedErrorMessage += " The specified AI model was not found. This could be due to an incorrect model name in the API URL or the model not being available for your project/key." }
                     throw new Error(detailedErrorMessage);
                 }
