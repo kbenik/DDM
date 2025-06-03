@@ -8,19 +8,20 @@
         body {
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
-            padding: 10px; /* Reduced */
-            background-color: #f4f4f4;
-            color: #333;
+            padding: 15px;
+            background-color: #f8f9fa;
+            color: #343a40;
             display: flex;
             flex-direction: column;
             align-items: center;
+            line-height: 1.55;
         }
 
         .container {
             background-color: #fff;
-            padding: 15px; /* Reduced */
-            border-radius: 8px;
-            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
             width: 90%;
             max-width: 850px;
         }
@@ -28,24 +29,29 @@
         h1 {
             text-align: center;
             color: #e67e22;
-            margin-bottom: 15px; /* Reduced */
-            font-size: 1.8em; /* Adjusted */
+            margin-bottom: 20px;
+            font-size: 1.9em;
+            font-weight: 600;
         }
 
         h2 {
             color: #d35400;
-            margin-top: 15px; /* Reduced */
-            margin-bottom: 8px; /* Reduced */
+            margin-top: 20px;
+            margin-bottom: 10px;
             border-bottom: 2px solid #f39c12;
-            padding-bottom: 3px; /* Reduced */
-            font-size: 1.3em; /* Adjusted */
+            padding-bottom: 5px;
+            font-size: 1.35em;
+            font-weight: 500;
+            display: flex; /* For aligning buttons with h2 */
+            justify-content: space-between; /* For aligning buttons with h2 */
+            align-items: center; /* For aligning buttons with h2 */
         }
 
         .selector-group {
-            margin-bottom: 15px; /* Reduced */
+            margin-bottom: 15px;
             display: flex;
             flex-wrap: wrap;
-            gap: 8px; /* Reduced */
+            gap: 10px;
         }
 
         .selector-group label {
@@ -53,15 +59,22 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            padding: 8px; /* Reduced */
-            border: 2px solid #ddd;
+            padding: 8px;
+            border: 1.5px solid #e0e0e0;
             border-radius: 8px;
             cursor: pointer;
             transition: all 0.2s ease-in-out;
-            min-width: 75px; /* Reduced */
-            height: 75px; /* Reduced */
+            min-width: 80px; 
+            height: 80px;  
             text-align: center;
             box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .selector-group label:hover {
+            border-color: #cccccc;
+            transform: translateY(-2px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
         }
 
         .selector-group input[type="radio"],
@@ -70,67 +83,113 @@
         }
 
         .selector-group .icon {
-            font-size: 2.2em; /* Reduced */
-            margin-bottom: 3px; /* Reduced */
+            font-size: 2em; 
+            margin-bottom: 4px; 
             line-height: 1;
         }
 
         .selector-group input[type="radio"]:checked + .icon-label,
         .selector-group input[type="checkbox"]:checked + .icon-label {
             border-color: #e67e22;
-            background-color: #fef5e7;
-            box-shadow: 0 0 5px #e67e22;
+            background-color: #fff8f2;
+            box-shadow: 0 0 0 2px rgba(230, 126, 34, 0.25), 0 2px 5px rgba(230,126,34,0.1);
+            transform: translateY(-1px);
         }
         .selector-group .icon-label span.item-name {
-            font-size: 0.7em; /* Reduced */
-            line-height: 1.1;
+            font-size: 0.7em;
+            line-height: 1.2; 
             display: block;
             max-width: 100%;
             word-wrap: break-word;
+            color: #495057;
+        }
+        .selector-group input[type="radio"]:checked + .icon-label span.item-name,
+        .selector-group input[type="checkbox"]:checked + .icon-label span.item-name {
+            color: #c75c0c;
+            font-weight: 500;
         }
 
-        .slider-container { margin: 15px 0; text-align: center; } /* Reduced margin */
-        .slider-container label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; } /* Reduced margin */
-        .slider-labels { display: flex; justify-content: space-between; font-size: 0.8em; color: #555; margin: 0 8px 3px 8px; } /* Reduced font-size and margin */
-        input[type="range"] { width: calc(100% - 16px); margin: 0 8px; cursor: pointer; -webkit-appearance: none; appearance: none; height: 6px; background: #ddd; border-radius: 5px; outline: none; } /* Reduced height and margin */
-        input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 16px; height: 16px; background: #e67e22; border-radius: 50%; cursor: pointer; } /* Reduced size */
-        input[type="range"]::-moz-range-thumb { width: 16px; height: 16px; background: #e67e22; border-radius: 50%; cursor: pointer; border: none; } /* Reduced size */
-        .slider-value-display { font-weight: bold; color: #e67e22; margin-top: 5px; font-size: 0.9em;} /* Added font-size */
+        .slider-container { margin: 15px 0; text-align: center; }
+        .slider-container > label { display: block; margin-bottom: 8px; font-weight: bold; color: #333; }
+        .slider-labels { display: flex; justify-content: space-between; font-size: 0.8em; color: #555; margin: 0 8px 3px 8px; }
+        input[type="range"] {
+            width: calc(100% - 16px); margin: 0 8px; cursor: pointer; -webkit-appearance: none; appearance: none;
+            height: 7px; background: #e9ecef; border-radius: 4px; outline: none; transition: background 0.2s ease;
+        }
+        input[type="range"]:hover { background: #ced4da; }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none; width: 18px; height: 18px; background: #e67e22;
+            border-radius: 50%; cursor: pointer; border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+            transition: transform 0.1s ease;
+        }
+        input[type="range"]::-webkit-slider-thumb:active { transform: scale(1.1); }
+        input[type="range"]::-moz-range-thumb {
+            width: 18px; height: 18px; background: #e67e22; border-radius: 50%; cursor: pointer;
+            border: 2px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,0.15); transition: transform 0.1s ease;
+        }
+        input[type="range"]::-moz-range-thumb:active { transform: scale(1.1); }
+        .slider-value-display {
+            font-weight: 500; color: #e67e22; margin-top: 8px; font-size: 0.95em;
+            display: inline-block; padding: 3px 8px; background-color: #fff8f2; border-radius: 4px;
+        }
 
         #generate-button {
-            display: block; width: 100%; padding: 12px; font-size: 1em; font-weight: bold; /* Reduced padding and font-size */
+            display: block; width: 100%; padding: 13px; font-size: 1.05em; font-weight: 600;
             color: #fff; background-color: #e67e22; border: none; border-radius: 8px;
-            cursor: pointer; transition: background-color 0.2s ease-in-out; margin-top: 20px; /* Reduced margin */
+            cursor: pointer; transition: background-color 0.2s ease-in-out, transform 0.1s ease-out; margin-top: 25px;
+            letter-spacing: 0.5px;
         }
-        #generate-button:hover { background-color: #d35400; }
-        #generate-button:disabled { background-color: #ccc; cursor: not-allowed; }
+        #generate-button:hover { background-color: #d35400; transform: translateY(-2px); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        #generate-button:active { transform: translateY(0px); box-shadow: none; }
+        #generate-button:disabled { background-color: #ced4da; cursor: not-allowed; transform: none; box-shadow: none; }
 
         #recipe-result {
-            margin-top: 20px; /* Reduced */
-            padding: 15px; /* Reduced */
-            background-color: #e9f7ef;
-            border: 1px solid #a9dfbf; border-radius: 8px; display: none;
+            margin-top: 25px; padding: 20px; border-radius: 8px; display: none;
+            background-color: #fefefe; border: 1px solid #e0e0e0;
         }
-        #recipe-result.error { background-color: #fdedec; border: 1px solid #f5b7b1; }
-        #recipe-result.loading { background-color: #eaf2f8; border: 1px solid #aed6f1; text-align: center; }
-        #recipe-result h3 { margin-top: 0; color: #1e8449; font-size: 1.2em; } /* Adjusted font-size */
-        #recipe-result.error h3 { color: #c0392b; }
-        #recipe-result.loading h3 { color: #2980b9; }
-        #recipe-result h4 { font-size: 1.1em; margin-top: 8px; margin-bottom: 5px; } /* Adjusted */
-        #recipe-result p { margin: 8px 0; line-height: 1.5; font-size: 0.9em; } /* Adjusted */
-        #recipe-result ul, #recipe-result ol { margin-left: 20px; padding-left: 20px; font-size: 0.9em; } /* Added font-size */
-        #recipe-result li { margin-bottom: 4px; } /* Adjusted */
-        #recipe-result a { color: #e67e22; text-decoration: none; font-weight: bold; }
-        #recipe-result a:hover { text-decoration: underline; }
+        #recipe-result.error { background-color: #fff2f2; border-color: #ffcccc; }
+        #recipe-result.loading { background-color: #f0f7ff; border-color: #cce0ff; text-align: center; }
+        #recipe-result h3 { margin-top: 0; color: #c75c0c; font-size: 1.25em; font-weight: 600; }
+        #recipe-result.error h3 { color: #b33434; }
+        #recipe-result.loading h3 { color: #2a6099; }
+        #recipe-result h4 { font-size: 1.1em; margin-top: 12px; margin-bottom: 6px; color: #545454; font-weight: 600;}
+        #recipe-result p { margin: 8px 0; line-height: 1.6; font-size: 0.9em; color: #454545;}
+        #recipe-result ul, #recipe-result ol { margin-left: 20px; padding-left: 20px; font-size: 0.9em; color: #454545;}
+        #recipe-result li { margin-bottom: 5px; }
+        #recipe-result a { color: #e67e22; text-decoration: none; font-weight: 600; }
+        #recipe-result a:hover { text-decoration: underline; color: #d35400; }
 
-        /* Removed .api-warning style as the div is removed */
+        .select-all-controls {
+            font-size: 0.65em; /* Smaller font size */
+            margin-left: auto; /* Pushes to the right */
+            font-weight: normal;
+            color: #555;
+            white-space: nowrap; /* Prevents wrapping */
+        }
+        .select-all-controls button {
+            background: none;
+            border: 1px solid #e67e22; /* Subtle border */
+            color: #e67e22;
+            cursor: pointer;
+            padding: 2px 5px; /* Smaller padding */
+            font-size: 0.9em; /* Relative to parent .select-all-controls */
+            text-decoration: none;
+            border-radius: 3px;
+            margin-left: 4px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .select-all-controls button:hover {
+            background-color: #e67e22;
+            color: #fff;
+        }
+        .select-all-controls .separator {
+            margin: 0 2px;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Dinner Decision Maker 🍽️</h1>
-
-        <!-- Removed API Key Warning Div -->
 
         <section><h2>1. Pick your Protein:</h2><div class="selector-group" id="protein-selector"></div></section>
         <section><h2>2. Select Vegetables (multiple):</h2><div class="selector-group" id="vegetable-selector"></div></section>
@@ -145,15 +204,54 @@
                 </label>
             </div>
         </section>
-        <section><h2>4. Available Seasonings (multiple):</h2><div class="selector-group" id="seasoning-selector"></div></section>
-        <section><h2>5. Available Sauces (multiple):</h2><div class="selector-group" id="sauce-selector"></div></section>
+        <section>
+            <h2>4. Available Seasonings (multiple):
+                <span class="select-all-controls">
+                    <button type="button" class="btn-select-all" data-group="seasoning">Select All</button>
+                    <span class="separator">|</span>
+                    <button type="button" class="btn-deselect-all" data-group="seasoning">Deselect All</button>
+                </span>
+            </h2>
+            <div class="selector-group" id="seasoning-selector"></div>
+        </section>
+        <section>
+            <h2>5. Available Sauces (multiple):
+                <span class="select-all-controls">
+                    <button type="button" class="btn-select-all" data-group="sauce">Select All</button>
+                    <span class="separator">|</span>
+                    <button type="button" class="btn-deselect-all" data-group="sauce">Deselect All</button>
+                </span>
+            </h2>
+            <div class="selector-group" id="sauce-selector"></div>
+        </section>
         <section><h2>6. Choose a Cuisine:</h2><div class="selector-group" id="cuisine-selector"></div></section>
         <section><h2>7. Dietary Preferences (multiple):</h2><div class="selector-group" id="dietary-selector"></div></section>
-        <section><h2>8. Ingredient Availability:</h2><div class="slider-container"><div class="slider-labels"><span>I already have these</span><span>I'm going shopping</span></div><input type="range" id="availability-slider" min="0" max="1" value="0" step="1"></div></section>
+        
+        <section>
+            <h2>8. Ingredient Sourcing:</h2>
+            <div class="selector-group" id="sourcing-selector">
+                <!-- Radio buttons will be populated here by JavaScript -->
+            </div>
+        </section>
+        
         <section><h2>9. Max Prep Time:</h2>
             <div class="slider-container">
                 <input type="range" id="prep-time-slider" min="5" max="120" value="30" step="5">
                 <div class="slider-value-display" id="prep-time-display">30 minutes</div>
+            </div>
+        </section>
+
+        <section><h2>10. Number of Servings:</h2>
+            <div class="slider-container">
+                <input type="range" id="servings-slider" min="1" max="10" value="2" step="1">
+                <div class="slider-value-display" id="servings-display">2 Servings</div>
+            </div>
+        </section>
+
+        <section><h2>11. Max Meal Cost (USD):</h2>
+            <div class="slider-container">
+                <input type="range" id="cost-slider" min="5" max="500" value="50" step="5">
+                <div class="slider-value-display" id="cost-display">$50</div>
             </div>
         </section>
 
@@ -176,8 +274,6 @@
         const GEMINI_API_KEY = "AIzaSyBHOcZUvmrSgmjSBGqH2pwZDD_FGdJn7W8"; // Your API Key is now directly here
         const GEMINI_API_URL = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
 
-        // Removed API Key warning logic from JavaScript
-
         // --- UI DATA (with Emojis) ---
         const proteins = [
             { id: 'chicken_breast', name: 'Chicken Breast', icon: '🐔' }, { id: 'chicken_thighs', name: 'Chicken Thighs', icon: '🐔' },
@@ -190,7 +286,6 @@
             { id: 'shrimp', name: 'Shrimp', icon: '🦐' }, { id: 'tofu', name: 'Tofu', icon: '🧈' },
             { id: 'lentils', name: 'Lentils', icon: '🫘' }, { id: 'eggs', name: 'Eggs', icon: '🥚' }
         ];
-
         const vegetables = [
             { id: 'broccoli', name: 'Broccoli', icon: '🥦' }, { id: 'carrot', name: 'Carrot', icon: '🥕' },
             { id: 'spinach', name: 'Spinach', icon: '🥬' }, { id: 'bellpepper', name: 'Bell Pepper', icon: '🌶️' },
@@ -203,7 +298,6 @@
             { id: 'kale', name: 'Kale', icon: '🥬' }, { id: 'corn_cob', name: 'Corn', icon: '🌽' },
             { id: 'celery', name: 'Celery', icon: '🌿' }, { id: 'leeks', name: 'Leeks', icon: '🧅' }
         ];
-
         const starches = [
             { id: 'rice', name: 'Rice', icon: '🍚' }, { id: 'pasta', name: 'Pasta', icon: '🍝' },
             { id: 'bread', name: 'Bread', icon: '🍞' }, { id: 'potatoes_starch', name: 'Potatoes', icon: '🥔' },
@@ -211,7 +305,6 @@
             { id: 'oats', name: 'Oats', icon: '🥣' }, { id: 'couscous', name: 'Couscous', icon: '🧆' }, 
             { id: 'barley', name: 'Barley', icon: '🌾' }, { id: 'sweet_potato_starch', name: 'Sweet Potatoes', icon: '🍠' }
         ];
-
         const seasonings = [
             { id: 'salt', name: 'Salt', icon: '🧂' }, { id: 'black_pepper', name: 'Pepper', icon: '⚫' },
             { id: 'garlic_powder', name: 'Garlic Pwd', icon: '🧄' }, { id: 'onion_powder', name: 'Onion Pwd', icon: '🧅' },
@@ -224,7 +317,6 @@
             { id: 'ginger_powder', name: 'Ginger Pwd', icon: '🌿' }, { id: 'turmeric', name: 'Turmeric', icon: '🧡' },
             { id: 'coriander_powder', name: 'Coriander Pwd', icon: '🌿' }, { id: 'italian_seasoning', name: 'Italian Mix', icon: '🌿🇮🇹' }
         ];
-
         const sauces = [
             { id: 'soy_sauce', name: 'Soy Sauce', icon: '🍾' }, { id: 'ketchup', name: 'Ketchup', icon: '🥫' }, 
             { id: 'mayonnaise', name: 'Mayo', icon: '🥚' }, { id: 'mustard', name: 'Mustard', icon: '💛' },
@@ -237,7 +329,6 @@
             { id: 'tahini', name: 'Tahini', icon: '🏺' }, { id: 'coconut_milk', name: 'Coconut Milk', icon: '🥥' },
             { id: 'fish_sauce', name: 'Fish Sauce', icon: '🐟🍾' }, { id: 'sweet_chili_sauce', name: 'Sweet Chili', icon: '🌶️🍯' }
         ];
-
         const cuisines = [
             { id: 'italian', name: 'Italian', icon: '🇮🇹' }, { id: 'american', name: 'American', icon: '🍔' },
             { id: 'mexican', name: 'Mexican', icon: '🌮' }, { id: 'indian', name: 'Indian', icon: '🥘' },
@@ -248,11 +339,14 @@
             { id: 'mediterranean', name: 'Mediterranean', icon: '🥗' }, { id: 'middle_eastern', name: 'Mid. Eastern', icon: '🧆' },
             { id: 'caribbean', name: 'Caribbean', icon: '🇯🇲' }
         ];
-
         const dietaryPreferences = [
             { id: 'vegan', name: 'Vegan', icon: '🌱' }, { id: 'vegetarian', name: 'Vegetarian', icon: '🥕' },
             { id: 'keto', name: 'Keto', icon: '🥓' }, { id: 'dairy_free', name: 'Dairy-Free', icon: '🥛🚫' },
             { id: 'gluten_free', name: 'Gluten-Free', icon: '🌾🚫' }
+        ];
+        const ingredientSourcingOptions = [
+            { id: 'pantry_raid', name: 'Pantry Raid! (Use ONLY what I have)', icon: '🥫' },
+            { id: 'grocery_run', name: 'Grocery Run! (Willing to shop)', icon: '🛒' }
         ];
 
         // --- DOM ELEMENTS ---
@@ -263,9 +357,15 @@
         const sauceSelector = document.getElementById('sauce-selector');
         const cuisineSelector = document.getElementById('cuisine-selector');
         const dietarySelector = document.getElementById('dietary-selector');
-        const availabilitySlider = document.getElementById('availability-slider');
+        const sourcingSelector = document.getElementById('sourcing-selector');
+        
         const prepTimeSlider = document.getElementById('prep-time-slider');
         const prepTimeDisplay = document.getElementById('prep-time-display');
+        const servingsSlider = document.getElementById('servings-slider');
+        const servingsDisplay = document.getElementById('servings-display');
+        const costSlider = document.getElementById('cost-slider');
+        const costDisplay = document.getElementById('cost-display');
+
         const generateButton = document.getElementById('generate-button');
 
         const recipeResultDiv = document.getElementById('recipe-result');
@@ -311,7 +411,36 @@
             sauces.forEach(s => sauceSelector.appendChild(createIconOption(s, 'checkbox', 'sauce')));
             cuisines.forEach(c => cuisineSelector.appendChild(createIconOption(c, 'radio', 'cuisine')));
             dietaryPreferences.forEach(d => dietarySelector.appendChild(createIconOption(d, 'checkbox', 'dietary')));
+            
+            ingredientSourcingOptions.forEach(opt => {
+                const optionElement = createIconOption(opt, 'radio', 'ingredientSourcing');
+                if (opt.id === 'pantry_raid') { 
+                    optionElement.querySelector('input').checked = true;
+                }
+                sourcingSelector.appendChild(optionElement);
+            });
         }
+
+        function setupSelectAllDeselectAll() {
+            document.querySelectorAll('.btn-select-all').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const groupName = e.target.dataset.group;
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(checkbox => {
+                        checkbox.checked = true;
+                    });
+                });
+            });
+
+            document.querySelectorAll('.btn-deselect-all').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const groupName = e.target.dataset.group;
+                    document.querySelectorAll(`input[name="${groupName}"]`).forEach(checkbox => {
+                        checkbox.checked = false;
+                    });
+                });
+            });
+        }
+
 
         prepTimeSlider.addEventListener('input', () => {
             const valueInMinutes = parseInt(prepTimeSlider.value);
@@ -324,10 +453,19 @@
             if (minutes > 0 || hours === 0) { 
                 displayValue += `${minutes} minutes`;
             }
-             if (valueInMinutes === 0 && hours === 0 && minutes === 0) { // Should be caught by min="5" but good fallback
+            if (valueInMinutes === 0 && hours === 0 && minutes === 0) {
                 displayValue = "5 minutes"; 
             }
             prepTimeDisplay.textContent = displayValue.trim();
+        });
+
+        servingsSlider.addEventListener('input', () => {
+            const numServings = parseInt(servingsSlider.value);
+            servingsDisplay.textContent = `${numServings} Serving${numServings > 1 ? 's' : ''}`;
+        });
+
+        costSlider.addEventListener('input', () => {
+            costDisplay.textContent = `$${costSlider.value}`;
         });
 
 
@@ -400,8 +538,6 @@
         }
 
         generateButton.addEventListener('click', async () => {
-            // Removed API key check here
-
             const selectedProteinId = getSelectedValues('protein');
             const selectedVeggieIds = getSelectedValues('vegetable', 'checkbox');
             let selectedStarchId = getSelectedValues('starch');
@@ -410,12 +546,20 @@
             const selectedSauceIds = getSelectedValues('sauce', 'checkbox');
             const selectedCuisineId = getSelectedValues('cuisine');
             const selectedDietaryIds = getSelectedValues('dietary', 'checkbox');
-            const wantsToShop = availabilitySlider.value === '1';
+            
+            const selectedSourcing = getSelectedValues('ingredientSourcing'); 
+            
             const maxPrepTime = prepTimeSlider.value;
+            const numServings = servingsSlider.value;
+            const maxCost = costSlider.value;
 
 
             if (!selectedProteinId || !selectedCuisineId) {
                 displayError("Please select a protein and a cuisine.");
+                return;
+            }
+            if (!selectedSourcing) { 
+                displayError("Please select an ingredient sourcing option.");
                 return;
             }
 
@@ -430,28 +574,57 @@
             const cuisineName = getNameById(selectedCuisineId, cuisines);
             const dietaryNames = selectedDietaryIds.map(id => getNameById(id, dietaryPreferences));
 
-
-            const shoppingPreferenceText = wantsToShop ? "User is going shopping and open to buying new ingredients." : "User wants to use ingredients they likely already have; prioritize common pantry staples for unspecified items.";
-
             let prompt = `
 You are a helpful and creative chef.
 A user wants a dinner recipe based on these preferences:
 - Protein: ${proteinName}
-- Vegetables: ${veggieNames.length > 0 ? veggieNames.join(', ') : 'Any suitable vegetables'}
-- Starch (optional): ${starchName || 'None specified, use if appropriate for the dish'}
 `;
-            if (seasoningNames.length > 0) {
-                prompt += `- User has these seasonings available and would like to use some if suitable: ${seasoningNames.join(', ')}\n`;
+
+            let notesInstructionForAI = "";
+
+            if (selectedSourcing === 'pantry_raid') {
+                prompt += `- Vegetables: ${veggieNames.length > 0 ? veggieNames.join(', ') + ' (MUST use ONLY these specific vegetables if any are listed. Do not add others.)' : 'None selected. Do not add any vegetables unless the protein itself can be considered one (e.g. lentils).'}\n`;
+                prompt += `- Starch (optional): ${starchName ? starchName + ' (MUST use this starch if listed. Do not add others.)' : 'None selected. Do not add any starch.'}\n`;
+                
+                if (seasoningNames.length > 0) {
+                    prompt += `- Available Seasonings: ${seasoningNames.join(', ')} (MUST use ONLY from this list. Do not add other seasonings.)\n`;
+                } else {
+                    prompt += `- Available Seasonings: None selected. (Do not add any seasonings. If seasonings are essential for a palatable dish with the other ingredients, state this limitation in the 'notes' field of the JSON response.)\n`;
+                }
+                if (sauceNames.length > 0) {
+                    prompt += `- Available Sauces: ${sauceNames.join(', ')} (MUST use ONLY from this list. Do not add other sauces, including cooking oils if not listed as an available sauce.)\n`;
+                } else {
+                    prompt += `- Available Sauces: None selected. (Do not add any sauces. If a sauce or cooking fat/oil is essential and not listed, state this limitation in the 'notes' field of the JSON response.)\n`;
+                }
+                
+                prompt += `- Cuisine Style: ${cuisineName} (Adapt to this style using ONLY the available ingredients listed above.)\n`;
+                if (dietaryNames.length > 0) {
+                    prompt += `- Dietary Restrictions/Preferences: ${dietaryNames.join(', ')}. The recipe must adhere to these using ONLY the available ingredients.\n`;
+                }
+                prompt += `- Ingredient Sourcing Preference: User selected 'Pantry Raid!'. The recipe MUST ONLY use the protein, vegetables, starch, seasonings, and sauces explicitly available and listed above. Basic universal staples like water can be assumed. If a cooking oil is absolutely essential and not listed as an available sauce, it might be assumed as a minimal quantity (e.g. 1 tsp for sautéing), but prioritize recipes that don't need it if not listed. If a reasonable dish cannot be made strictly from the provided items, clearly state this in the 'notes' field of the JSON response and explain why.\n`;
+                notesInstructionForAI = "Confirm that the recipe uses ONLY the user-specified available ingredients (protein, vegetables, starch, seasonings, sauces). If any basic assumptions were made (e.g., water, minimal unlisted oil), state them. If a palatable recipe is not possible with the strict constraints, explain why. Also include any extra tips, serving suggestions, or why this recipe fits other criteria like prep time and cost. Limit to 1-2 sentences.";
+
+            } else { // 'grocery_run'
+                prompt += `- Vegetables: ${veggieNames.length > 0 ? veggieNames.join(', ') : 'Any suitable vegetables'}\n`;
+                prompt += `- Starch (optional): ${starchName || 'None specified, use if appropriate for the dish'}\n`;
+                if (seasoningNames.length > 0) {
+                    prompt += `- User has these seasonings available and would like to use some if suitable: ${seasoningNames.join(', ')}\n`;
+                }
+                if (sauceNames.length > 0) {
+                    prompt += `- User has these sauces available and would like to use some if suitable: ${sauceNames.join(', ')}\n`;
+                }
+                prompt += `- Cuisine Style: ${cuisineName}\n`;
+                if (dietaryNames.length > 0) {
+                    prompt += `- Dietary Restrictions/Preferences: ${dietaryNames.join(', ')}. The recipe must adhere to these.\n`;
+                }
+                prompt += `- Ingredient Sourcing Preference: User selected 'Grocery Run!'. User is willing to go shopping and open to buying new ingredients. You can suggest ingredients beyond what the user explicitly has.\n`;
+                notesInstructionForAI = "Any extra tips, serving suggestions, prep time considerations, or why this recipe fits the criteria. Since the user is willing to shop, you can suggest ingredients as needed. Mention if the cost estimation was considered. Limit to 1-2 sentences.";
             }
-            if (sauceNames.length > 0) {
-                prompt += `- User has these sauces available and would like to use some if suitable: ${sauceNames.join(', ')}\n`;
-            }
-            prompt += `- Cuisine Style: ${cuisineName}\n`;
-            if (dietaryNames.length > 0) {
-                prompt += `- Dietary Restrictions/Preferences: ${dietaryNames.join(', ')}. The recipe must adhere to these.\n`;
-            }
-            prompt += `- Shopping Willingness: ${shoppingPreferenceText}\n`;
+
+            // Common parts of the prompt
             prompt += `- Maximum Prep Time: ${maxPrepTime} minutes. Please suggest a recipe that can be prepared within this time.\n`;
+            prompt += `- Number of Servings: ${numServings}\n`;
+            prompt += `- Estimated Maximum Total Cost for all servings: $${maxCost} USD. The recipe should be mindful of this budget when suggesting ingredients and quantities. This is a guideline.\n`;
 
             prompt += `
 Please provide a single, complete recipe suggestion.
@@ -460,24 +633,26 @@ The output MUST be a valid JSON object with the following structure, and nothing
   "recipeName": "A catchy name for the recipe",
   "description": "A brief, enticing description of the dish (1-2 sentences).",
   "ingredients": [
-    {"item": "Ingredient name", "quantity": "Amount, e.g., 1 cup, 2 tbsp, 100g"}
+    {"item": "Ingredient name", "quantity": "Amount, e.g., 1 cup, 2 tbsp, 100g (Adjust quantities for ${numServings} servings)"}
   ],
   "instructions": [
     "Step 1...",
     "Step 2...",
     "Step 3..."
   ],
-  "notes": "Any extra tips, serving suggestions, prep time considerations, or why this recipe fits the criteria. If user is not going shopping, emphasize using common pantry staples. Limit to 1-2 sentences.",
+  "notes": "${notesInstructionForAI}",
   "searchLink": "A concise Google search query to find this specific recipe or very similar ones online, e.g., 'easy ${proteinName} ${veggieNames.length > 0 ? veggieNames[0] : ''} ${starchName || ''} ${cuisineName} recipe ${dietaryNames.length > 0 ? dietaryNames[0] : ''}'"
 }
 
 Focus on a recipe that is relatively straightforward to make and fits all criteria.
 Ensure the recipe name is catchy and the instructions are clear and concise (3-5 main steps).
-List 5-10 key ingredients.
-If no specific vegetables are selected, suggest 2-3 common vegetables that fit the cuisine and protein.
-The recipe should primarily feature the selected protein, vegetables, and starch (if chosen).
-If vegan or vegetarian is selected, ensure the protein choice aligns or an alternative is implicitly used (e.g. if user selects chicken but also vegan, prioritize vegan).
-Adhere strictly to dietary restrictions. For example, if 'gluten-free' is selected, do not suggest recipes with wheat pasta unless specifying gluten-free pasta. If 'keto' is selected, ensure ingredients are low-carb.
+List 5-10 key ingredients, with quantities appropriate for ${numServings} servings.
+If no specific vegetables are selected AND 'Grocery Run' is chosen, suggest 2-3 common vegetables that fit the cuisine and protein. If 'Pantry Raid' and no vegetables are selected, do not add any.
+The recipe should primarily feature the selected protein, vegetables, and starch (if chosen and available/allowed by sourcing preference).
+If vegan or vegetarian is selected, ensure the protein choice aligns or an alternative is implicitly used (e.g. if user selects chicken but also vegan, prioritize vegan using only allowed ingredients if Pantry Raid).
+Adhere strictly to dietary restrictions. For example, if 'gluten-free' is selected, do not suggest recipes with wheat pasta unless specifying gluten-free pasta (and ensuring it's 'available' if Pantry Raid). If 'keto' is selected, ensure ingredients are low-carb.
+Consider the estimated maximum cost and the ingredient sourcing preference (Pantry Raid vs. Grocery Run) when suggesting ingredients and their quantities.
+For 'Pantry Raid', if essential items like specific seasonings or sauces are not selected by the user, the recipe should still attempt to be made without them, or the AI should state in the 'notes' that the recipe is limited or not possible without them.
 `;
 
             try {
@@ -495,7 +670,6 @@ Adhere strictly to dietary restrictions. For example, if 'gluten-free' is select
                     console.error("API Error Response:", errorData);
                     let detailedErrorMessage = `API request failed: ${response.status} ${response.statusText}.`;
                     if (errorData.error && errorData.error.message) { detailedErrorMessage += ` Details: ${errorData.error.message}`; }
-                    // Simplified error for API key issues, as it's now hardcoded
                     if (response.status === 400 && errorData.error?.message?.toLowerCase().includes("api key not valid")) { detailedErrorMessage += " The hardcoded API key is not valid. Please check it."; }
                     else if (response.status === 403) { detailedErrorMessage += " Permission denied for the hardcoded API key. Ensure it has necessary permissions or the API is enabled."; }
                     else if (response.status === 404 && errorData.error?.message?.toLowerCase().includes("model")) { detailedErrorMessage += " The specified AI model was not found. This could be due to an incorrect model name in the API URL or the model not being available for your project/key." }
@@ -537,7 +711,10 @@ Adhere strictly to dietary restrictions. For example, if 'gluten-free' is select
         });
         // --- INITIALIZATION ---
         populateSelectors();
+        setupSelectAllDeselectAll(); // Added this call
         prepTimeSlider.dispatchEvent(new Event('input')); 
+        servingsSlider.dispatchEvent(new Event('input'));
+        costSlider.dispatchEvent(new Event('input'));
     </script>
 </body>
 </html>
